@@ -1,11 +1,16 @@
 # Pull Redis Enterprise data using Prometheus and Grafana
 
+Basically a repo that sets this up: https://docs.redislabs.com/latest/rs/administering/monitoring-metrics/prometheus-integration/
+
+
 ## Startup
 `docker-compose up`
 
 or... if you plan on just leaving it up for a while...
 
 `docker-compose up &> log.out &`
+
+currently *log.out* is in the gitignore... but whatever filename you want, just don't push it back to the repo ;-)
 
 ## Update redis host ip
 The prometheus.yml contains a target for one of the internal docker IPs where RS is running.  You may need to change this to match the IP of your master node.
@@ -30,9 +35,10 @@ Password can be changed in the docker-compose.yml
 ## Add Data Sources
 Click add data source.
 
-Add Prometheus with the internal docker network IP of the prometheus server... 
+Name it whatever you want.  Select 'Prometheus' from the drop down and enter 'http://prometheus:9090' in the address.  
 
-change 'Access' to browser and leave default http://localhost:9090 or ... leave as server and find the prometheus docker IP endpoint
+Detailed instructions in step 3 here: https://docs.redislabs.com/latest/rs/administering/monitoring-metrics/prometheus-integration/
+
 
 ## Manage Dashboard
 In UI hover over dashboard symbol and click 'manage'
