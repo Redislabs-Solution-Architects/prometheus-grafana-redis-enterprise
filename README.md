@@ -2,8 +2,10 @@
 
 Basically a repo that sets this up: https://docs.redislabs.com/latest/rs/administering/monitoring-metrics/prometheus-integration/
 
+I was mainly using with David's rl-docker so are not wanting to use with that then you will need to tweak some of the settings.
 
-## Startup
+## Start / Stop
+Standard docker-compose start command
 `docker-compose up`
 
 or... if you plan on just leaving it up for a while...
@@ -11,6 +13,16 @@ or... if you plan on just leaving it up for a while...
 `docker-compose up &> log.out &`
 
 currently *log.out* is in the gitignore... but whatever filename you want, just don't push it back to the repo ;-)
+
+To stop run the standard docker-compose command..
+`docker-compose stop`
+
+## Docker network
+I was using this with David's rl-docker setup which creates a docker network called 'rs-net' ... you can comment out that section of the docker-compose.yml if that is not needed... or update it to what works for you.
+
+If you just want to create the network...
+
+```docker network create rs-net```
 
 ## Update redis host ip
 The prometheus.yml contains a target for one of the internal docker IPs where RS is running.  You may need to change this to match the IP of your master node.
