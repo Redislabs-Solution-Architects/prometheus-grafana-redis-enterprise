@@ -2,7 +2,7 @@
 
 Basically a repo that sets this up: https://docs.redislabs.com/latest/rs/administering/monitoring-metrics/prometheus-integration/
 
-I was mainly using with David's rl-docker so are not wanting to use with that then you will need to tweak some of the settings.
+I was mainly using with David's rl-docker so if you are not wanting to use with that then you will need to tweak some of the settings.
 
 ## Start / Stop
 Standard docker-compose start command
